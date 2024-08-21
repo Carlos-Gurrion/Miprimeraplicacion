@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.currentCompositionLocalContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
@@ -45,6 +46,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
  fun CertificatingCourse(nombre:String, modifier: Modifier=Modifier ) {
+     val course="Curso de android"
      Column(
          modifier = modifier
              .fillMaxSize()
@@ -71,8 +73,12 @@ class MainActivity : ComponentActivity() {
                  contentDescription =null,
                  modifier=modifier.size(50.dp,50.dp))
          }
-         Spacer(modifier = modifier.height(100.dp))
-         Text(text ="This certificate is presented to:")
+         Spacer(modifier = modifier.height(190.dp))
+         Text(text ="This certificate is presented to:",
+             fontSize = 15.sp,
+             modifier=modifier.fillMaxWidth(),
+             textAlign= TextAlign.Center
+             )
          Box{
              Image(painter = painterResource(id = R.drawable.android_logo),
                  contentDescription =null,
@@ -89,12 +95,38 @@ class MainActivity : ComponentActivity() {
         }
          Spacer(modifier=modifier.height(10.dp))
 
-         Text(text="has successfully completed a 2 hours course on"
+         Text(text="has successfully completed a 4 hours course on",
+             fontSize = 15.sp,
+             modifier=modifier.fillMaxWidth(),
+             textAlign= TextAlign.Center
 
          )
-         Text(text = )
+         Spacer(modifier = modifier.height(75.dp))
 
+         Text(text = "$course",
+             fontSize = 15.sp,
+             modifier=modifier.fillMaxWidth(),
+             textAlign= TextAlign.Center
+             )
 
+         Spacer(modifier = modifier.height(100.dp))
+        Row{
+        Image(painter = painterResource(id = R.drawable.firma_en_png_firmas_en_formato_11562869799c09le16rgz),
+            contentDescription =null,
+            modifier=modifier.size(150.dp,75.dp),
+            )
+        Spacer(modifier = modifier.width(65.dp))
+        Image(painter = painterResource(id = R.drawable.png_clipart_firmas_de_famosos_famous_signatures_in_black_signature),
+            contentDescription =null,
+            modifier=modifier.size(150.dp,75.dp)
+            )
+        }
+        Row {
+            Spacer(modifier = modifier.width(30.dp))
+            Text(text = "Gael Camacho")
+            Spacer(modifier = modifier.width(130.dp))
+            Text(text = "Gregory Lars")
+        }
     }
 }
 
